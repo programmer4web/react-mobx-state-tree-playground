@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
-import {observer} from 'mobx-react';
+import {observer, inject} from 'mobx-react';
 import styled from 'styled-components';
 
-import categoriesData from '../assets/data.json';
-const categories = categoriesData.categories;
 const Edit = styled.div`
  
   `,
@@ -23,6 +21,7 @@ const Edit = styled.div`
 
 class WishListItemEdit extends Component {
   render() {
+    const categories = this.props.wishList.categories;
     const {item} = this.props;
     return (
       <Edit>
@@ -71,4 +70,4 @@ class WishListItemEdit extends Component {
   }
 }
 
-export default observer(WishListItemEdit);
+export default inject('wishList')(observer(WishListItemEdit));

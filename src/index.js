@@ -5,6 +5,7 @@ import { onSnapshot, getSnapshot } from 'mobx-state-tree';
 import App from './components/App';
 import {WishList} from './models/WishList';
 import stateData from './assets/data.json';
+import {Provider} from 'mobx-react';
 
 let initialState = stateData;
 // const data = localStorage.getItem("wishlistapp");
@@ -18,7 +19,9 @@ onSnapshot(wishList, snapshot => {
 })
 
 function renderApp(){
-  ReactDOM.render(<App wishList={wishList}/>, document.getElementById('root'));
+  ReactDOM.render(
+    <Provider wishList={wishList}><App /></Provider>
+    , document.getElementById('root'));
 }
 
 renderApp();

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {inject} from 'mobx-react';
 import styled from 'styled-components';
 
 import logo from '../assets/logo.svg';
@@ -42,4 +43,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default inject('wishList')(App);
