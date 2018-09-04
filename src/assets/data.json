@@ -1,0 +1,44 @@
+{
+  "categories": [
+    {
+      "id": "0",
+      "name": "Books"
+    },
+    {
+      "id": "1",
+      "name": "Movies"
+    },
+    {
+      "id": "2",
+      "name": "All Sports"
+    },
+    {
+      "id": "3",
+      "name": "Pet Food"
+    },
+    {
+      "id": "4",
+      "name": "Electronics"
+    }
+  ],
+  "items": [
+    {
+      "name": "Cronicles of Narnia Box Set",
+      "price": 28.73,
+      "image": "https://images-na.ssl-images-amazon.com/images/I/51YGwxKn3CL._SX258_BO1,204,203,200_.jpg",
+      "category": "0"
+    },
+    {
+      "name": "Digital Image Processing",
+      "price": 23.89,
+      "image": "https://images-na.ssl-images-amazon.com/images/I/51b2AHFc%2BkL._SX376_BO1,204,203,200_.jpg",
+      "category": "0"
+    },
+    {
+      "name": "Bushnell Falcon 133410 Binoculars with Case",
+      "price": 21.95,
+      "image": "https://images-na.ssl-images-amazon.com/images/I/61ZtnrSOPTL._SL1500_.jpg",
+      "category": "2"
+    }
+  ]
+}
