@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import WishListItemView from './WishListItemView';
 import WishListItemEntry from './WishListItemEntry';
+import CategoryEntry from './CategoryEntry';
 
 const List = styled.ul`
     list-style-type: none;
@@ -20,6 +21,9 @@ const WishListView = ({wishlist}) => (
     <hr />
     <Total>Total price: {wishlist.totalPrice.toFixed(2)}</Total>
     <WishListItemEntry wishList={wishlist} />
+    <br/>
+    <hr/>
+    <CategoryEntry />
   </List>
 )
 

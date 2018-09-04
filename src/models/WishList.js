@@ -38,6 +38,13 @@ export const WishList = types.model({
     },
     remove(item) {
       destroy(item);
+    },
+    addCategory(category){
+      const idx = self.categories.length;
+      self.categories.push({
+        id: idx.toString(),
+        name: category.name
+      })
     }
   })
 ).views(self => ({

@@ -20,7 +20,9 @@ onSnapshot(wishList, snapshot => {
 
 function renderApp(){
   ReactDOM.render(
-    <Provider wishList={wishList}><App /></Provider>
+    <Provider wishList={wishList}>
+      <App />
+    </Provider>
     , document.getElementById('root'));
 }
 
