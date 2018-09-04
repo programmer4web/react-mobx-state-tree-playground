@@ -11,16 +11,14 @@ const Edit = styled.div`
     display: flex;
     justify-content: space-between;
     margin-bottom: 12px;
-
-    input {
-      padding: 0 12px;
-    }
   `,
   Label = styled.label`
     font-size: 13px;
+    line-height: 22px;
   `,
   Input = styled.input`
     line-height: 18px;
+    padding: 0 12px;
   `
 
 class WishListItemEdit extends Component {

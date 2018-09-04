@@ -8,6 +8,10 @@ import WishListItemEdit from './WishListItemEdit';
 const Editor = styled.div`
     max-width: 250px;
     margin: 24px auto;
+    
+    button {
+      margin-right: 12px;
+    }
   `, 
   Item = styled.li`
     display: inline-block;
@@ -64,6 +68,7 @@ class WishListItemView extends Component {
   } 
 
   onToggleEdit= () => {
+    
     this.setState({
       isEditing: true,
       clone: clone(this.props.item)
