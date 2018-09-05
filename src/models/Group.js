@@ -9,6 +9,6 @@ export const User = types.model({
   wishList: types.optional(WishList, {})
 })
 
-// const Group = types.model({
-//   users: types.map(User)
-// })
+export const Group = types.model({
+  users: types.map(User)
+})

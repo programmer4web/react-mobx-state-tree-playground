@@ -3,8 +3,10 @@
 exports[`can add new items 2 1`] = `
 Array [
   Object {
+    "categories": Array [],
     "items": Array [
       Object {
+        "category": undefined,
         "image": "",
         "name": "The book with new name",
         "price": 12,

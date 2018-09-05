@@ -1,4 +1,4 @@
-import {types, getEnv, getParent, destroy } from 'mobx-state-tree';
+import { types, getParent, destroy } from 'mobx-state-tree'; // getEnv,
 
 import Category from './Category';
 
@@ -50,7 +50,7 @@ export const WishList = types.model({
   })
 ).views(self => ({
   get totalPrice() {
-    getEnv(this).alert('computed total price.');
+    // getEnv(this).alert('computed total price.');
     return self.items.reduce((sum, entry) => 
     { return sum + entry.price}, 0)
   }
