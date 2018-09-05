@@ -12,7 +12,9 @@ let initialState = stateData;
 // if(data){
 //   initialState = JSON.parse(data);
 // }
-let wishList = WishList.create(initialState);
+let wishList = WishList.create(initialState,{
+  alert: m => console.log(m)
+});
 
 onSnapshot(wishList, snapshot => {
   localStorage.setItem('wishlistapp', JSON.stringify(snapshot));

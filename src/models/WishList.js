@@ -1,4 +1,4 @@
-import {types, getParent, destroy } from 'mobx-state-tree';
+import {types, getEnv, getParent, destroy } from 'mobx-state-tree';
 
 import Category from './Category';
 
@@ -29,9 +29,10 @@ export const WishListItem = types.model({
 
 
 export const WishList = types.model({
-  categories: types.array(Category),
-  items: types.optional(types.array(WishListItem), [])
-})
+    categories: types.array(Category),
+    items: types.optional(types.array(WishListItem), [])
+  }
+)
 .actions(self => ({
     add(item) {
       self.items.push(item);
@@ -49,7 +50,9 @@ export const WishList = types.model({
   })
 ).views(self => ({
   get totalPrice() {
+    getEnv(this).alert('computed total price.');
     return self.items.reduce((sum, entry) => 
     { return sum + entry.price}, 0)
   }
-}))
+}
+))
