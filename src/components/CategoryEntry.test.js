@@ -21,7 +21,7 @@ it('instantiates an CategoryEntry without error', () => {
   ReactDOM.unmountComponentAtNode(div);
 });
 
-it('adds new category', () => {
+it('onAddCategory adds new category', () => {
   const length = wishList.categories.length,
     wrapper = mount(<Provider wishList={wishList} ><CategoryEntry /></Provider>),
     button = wrapper.find('button');
@@ -34,5 +34,19 @@ it('adds new category', () => {
   const categories = wishList.categories;
   expect(categories.length).toEqual(length+1);
   expect(categories[length].name).toBe('New Category');
+});
+
+it('onAddCategory does not add category that already exists', () => {
+  const length = wishList.categories.length,
+    wrapper = mount(<Provider wishList={wishList} ><CategoryEntry /></Provider>),
+    button = wrapper.find('button');
+
+  const input = wrapper.find('input'),
+    e = { target: { value: 'Books' } };
+
+  input.simulate('change', e);
+  button.simulate('click');
+  const categories = wishList.categories;
+  expect(categories.length).toEqual(length);
 });
 

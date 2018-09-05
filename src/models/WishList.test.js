@@ -89,4 +89,25 @@ it('can calculate total Price', () => {
   console.log(changed);
   list.items[0].changeName('Gefanada');
   console.log(changed);
+});
+
+it('item remove works', () => {
+  const list = WishList.create();
+  list.add(
+    WishListItem.create({
+      name: 'Chesterton',
+      price: 12
+    })
+  )
+  list.add(
+    {
+      name: 'Sana',
+      price: 3
+    }
+  )
+  expect(list.items.length).toBe(2);
+  list.items[0].remove();
+  expect(list.items.length).toBe(1);
+  list.items[0].remove();
+  expect(list.items.length).toBe(0);
 })

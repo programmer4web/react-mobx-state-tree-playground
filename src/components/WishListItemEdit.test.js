@@ -43,3 +43,36 @@ it('invalid price value does not changes price', () => {
   input.simulate('change', { target: { value: 'invalid price' } });
   expect(wishList.items[0].price).toBe(0);
 });
+
+it('categoryChange updates category of entry', () => {
+  const wrapper = mount(
+    <Provider wishList={wishList} >
+      <WishListItemEdit item={wishList.items[0]} />
+    </Provider>),
+    input = wrapper.find('select');
+
+  input.simulate('change', { target: { value: '4' } });
+  expect(wishList.items[0].category.name).toBe('Electronics');
+});
+
+it('onNameChange updates name of entry', () => {
+  const wrapper = mount(
+    <Provider wishList={wishList} >
+      <WishListItemEdit item={wishList.items[0]} />
+    </Provider>),
+    input = wrapper.find('input').first();
+
+  input.simulate('change', { target: { value: 'Custom Name' } });
+  expect(wishList.items[0].name).toBe('Custom Name');
+});
+
+it('onImageChange updates image of entry', () => {
+  const wrapper = mount(
+    <Provider wishList={wishList} >
+      <WishListItemEdit item={wishList.items[0]} />
+    </Provider>),
+    input = wrapper.find('input').last();
+
+  input.simulate('change', { target: { value: 'https://via.placeholder.com/350x150' } });
+  expect(wishList.items[0].image).toBe('https://via.placeholder.com/350x150');
+});
