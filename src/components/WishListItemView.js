@@ -58,7 +58,7 @@ class WishListItemView extends Component {
 
   renderEditable () {
     const category = this.props.item.category,
-      categoryId = category && category.id || ''; 
+      categoryId = (category && category.id) || ''; 
     return (
       <Editor>
         <h4>Edit item:</h4>
