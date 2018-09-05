@@ -57,10 +57,12 @@ class WishListItemView extends Component {
   }
 
   renderEditable () {
+    const category = this.props.item.category,
+      categoryId = category && category.id || ''; 
     return (
       <Editor>
         <h4>Edit item:</h4>
-        <WishListItemEdit item={this.state.clone} />
+        <WishListItemEdit item={this.state.clone} categoryId={categoryId} />
         <button onClick={this.onSaveEdit}>Save</button>
         <button onClick={this.onCancelEdit}>Cancel</button>
       </Editor>
@@ -68,7 +70,6 @@ class WishListItemView extends Component {
   } 
 
   onToggleEdit= () => {
-    
     this.setState({
       isEditing: true,
       clone: clone(this.props.item)

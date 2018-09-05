@@ -21,8 +21,9 @@ const Edit = styled.div`
 
 class WishListItemEdit extends Component {
   render() {
-    const categories = this.props.wishList.categories;
-    const {item} = this.props;
+    const categories = this.props.wishList.categories,
+      {item, categoryId} = this.props;
+
     return (
       <Edit>
         <Line>
@@ -39,7 +40,7 @@ class WishListItemEdit extends Component {
         </Line>
         <Line>
           <Label>Category: </Label>
-          <select onChange={this.onCategoryChange} defaultValue="disabled">
+          <select onChange={this.onCategoryChange} defaultValue={categoryId}>
             <option value="disabled" disabled="disabled">Select Category</option>
             {categories && categories.map(category => (
               <option value={category.id} key={category.id}>{category.name}</option>)
