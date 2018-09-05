@@ -3,6 +3,7 @@ import {inject} from 'mobx-react';
 import styled from 'styled-components';
 
 import logo from '../assets/logo.svg';
+import UserView from './UserView';
 import WishListView from './WishListView';
 
 const Title = styled.h1`
@@ -16,7 +17,7 @@ Application = styled.div`
 `,
 AppHeader = styled.header`
   background-color: #222;
-  height: 150px;
+  min-height: 150px;
   padding: 20px;
   color: white;
 `,
@@ -31,11 +32,13 @@ animation: App-logo-spin infinite 100s linear;
 
 class App extends Component {
   render() {
+    const showUserAttributes = this.props.appSettings.showUserAttributes;
     return (
       <Application>
         <AppHeader>
           <Img src={logo} alt="logo" height={70}/>
           <Title>React Mobx-state-tree Playground</Title>
+          <UserView showAttributes={showUserAttributes} />
         </AppHeader>
         <WishListView wishlist={this.props.wishList} />
       </Application>
@@ -43,4 +46,4 @@ class App extends Component {
   }
 }
 
-export default inject('wishList')(App);
+export default inject('wishList', 'appSettings')(App);
