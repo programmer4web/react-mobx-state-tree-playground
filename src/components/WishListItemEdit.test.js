@@ -60,7 +60,7 @@ it('onNameChange updates name of entry', () => {
     <Provider wishList={wishList} >
       <WishListItemEdit item={wishList.items[0]} />
     </Provider>),
-    input = wrapper.find('input').first();
+    input = wrapper.find('input').at(1);
 
   input.simulate('change', { target: { value: 'Custom Name' } });
   expect(wishList.items[0].name).toBe('Custom Name');
@@ -71,7 +71,7 @@ it('onImageChange updates image of entry', () => {
     <Provider wishList={wishList} >
       <WishListItemEdit item={wishList.items[0]} />
     </Provider>),
-    input = wrapper.find('input').last();
+    input = wrapper.find('input').first();
 
   input.simulate('change', { target: { value: 'https://via.placeholder.com/350x150' } });
   expect(wishList.items[0].image).toBe('https://via.placeholder.com/350x150');
