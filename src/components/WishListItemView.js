@@ -32,6 +32,9 @@ const Editor = styled.div`
     font-weight: bold;
   `;
 
+Category.displayName = 'Category';
+Item.displayName= 'Item';
+
 class WishListItemView extends Component {
   constructor(props) {
     super(props);
