@@ -17,6 +17,11 @@ const Edit = styled.div`
   Input = styled.input`
     line-height: 18px;
     padding: 0 12px;
+
+    &[type="number"] {
+      max-width: 119px;
+      box-sizing: border-box;
+    }
   `
 
 class WishListItemEdit extends Component {
@@ -27,16 +32,12 @@ class WishListItemEdit extends Component {
     return (
       <Edit>
         <Line>
+          <Label>Image: </Label>
+          <Input value={item.image} onChange={this.onImageChange} />
+        </Line>
+        <Line>
           <Label>Thing: </Label>
           <Input value={item.name} onChange={this.onNameChange}/>
-        </Line>
-        <Line>
-          <Label>Price: </Label>
-          <Input type="number" value={item.price} onChange={this.onPriceChange} min={0} />
-        </Line>
-        <Line>
-          <Label>Image: </Label>
-          <Input value={item.image} onChange={this.onImageChange}/>
         </Line>
         <Line>
           <Label>Category: </Label>
@@ -46,6 +47,10 @@ class WishListItemEdit extends Component {
               <option value={category.id} key={category.id}>{category.name}</option>)
             )}
           </select>
+        </Line>
+        <Line>
+          <Label>Price: </Label>
+          <Input type="number" value={item.price} onChange={this.onPriceChange} min={0} />
         </Line>
       </Edit>
     )

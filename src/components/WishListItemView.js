@@ -6,9 +6,10 @@ import styled from 'styled-components';
 import WishListItemEdit from './WishListItemEdit';
 
 const Editor = styled.div`
+    display: inline-block;
     max-width: 250px;
     margin: 24px auto;
-    
+
     button {
       margin-right: 12px;
     }
