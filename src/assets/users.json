@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "id": "0",
+      "name": "Jon Doe",
+      "gender": "m"
+    },
+    {
+      "id": "1",
+      "name": "Anita Pascal",
+      "gender": "f"
+    },
+    {
+      "id": "2",
+      "name": "Leonard Thomson",
+      "gender": "m"
+    }
+  ]
+}

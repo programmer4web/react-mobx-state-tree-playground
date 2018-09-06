@@ -16,6 +16,7 @@ class WishListItemEntry extends Component {
 
     this.state = {
       entry: WishListItem.create({
+        image: 'http://',
         name: "",
         price: 0
       })

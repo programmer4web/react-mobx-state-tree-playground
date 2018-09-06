@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import logo from '../assets/logo.svg';
 import UserView from './UserView';
+import GroupView from './GroupView';
 import WishListView from './WishListView';
 
 const Title = styled.h1`
@@ -16,18 +17,20 @@ Application = styled.div`
   font-family: sans-serif;
 `,
 AppHeader = styled.header`
+  display: flex;
+  justify-content: space-around;
   background-color: #222;
   min-height: 150px;
   padding: 20px;
   color: white;
 `,
 Img = styled.img`
-padding: 10px;
-animation: App-logo-spin infinite 100s linear;
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
+  padding: 10px;
+  animation: App-logo-spin infinite 100s linear;
+  @keyframes App-logo-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
 `
 
 class App extends Component {
@@ -38,12 +41,13 @@ class App extends Component {
         <AppHeader>
           <Img src={logo} alt="logo" height={70}/>
           <Title>React Mobx-state-tree Playground</Title>
-          <UserView showAttributes={showUserAttributes} />
+          <UserView user={this.props.user} showAttributes={showUserAttributes} />
         </AppHeader>
         <WishListView wishlist={this.props.wishList} />
+        <GroupView />
       </Application>
     );
   }
 }
 
-export default inject('wishList', 'appSettings')(App);
+export default inject('wishList', 'appSettings', 'user')(App);

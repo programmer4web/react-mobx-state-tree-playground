@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import { inject } from 'mobx-react';
 import styled from 'styled-components';
 
 const User = styled.div`
@@ -31,4 +30,4 @@ class UserView extends Component {
   }
 }
 
-export default inject('user')(UserView);
+export default UserView;

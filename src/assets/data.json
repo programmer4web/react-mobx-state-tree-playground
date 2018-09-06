@@ -19,6 +19,22 @@
     {
       "id": "4",
       "name": "Electronics"
+    },
+    {
+      "id": "5",
+      "name": "Animals"
+    },
+    {
+      "id": "6",
+      "name": "Food"
+    },
+    {
+      "id": "7",
+      "name": "Flowers"
+    },
+    {
+      "id": "8",
+      "name": "Toys"
     }
   ],
   "items": [

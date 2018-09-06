@@ -4,6 +4,7 @@ import { clone, getSnapshot, applySnapshot } from 'mobx-state-tree';
 import styled from 'styled-components';
 
 import WishListItemEdit from './WishListItemEdit';
+import Icon from './Icon';
 
 const Editor = styled.div`
     display: inline-block;
@@ -50,7 +51,7 @@ class WishListItemView extends Component {
     ) : (
       <Item>
         { item.image && <img src={item.image} width={150} alt=" "/>}
-        <h3>{item.name}</h3>
+        <h3><Icon/>{item.name}</h3>
         {item.category && <Category>Category: {item.category.name}</Category>}
         <Price>Price: {item.price}</Price>
         <button onClick={this.onToggleEdit} >Edit</button>

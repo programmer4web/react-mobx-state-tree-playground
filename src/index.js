@@ -6,20 +6,18 @@ import App from './components/App';
 import AppSettings from './models/AppSettings';
 import {User} from './models/Group';
 import {WishList} from './models/WishList';
-import stateData from './assets/data.json';
 import {Provider} from 'mobx-react';
+
+import usersData from './assets/users.json';
+import stateData from './assets/data.json';
 
 const appSettings = {
   showUserAttributes: false
 },
 AppSettingsStore = AppSettings.create(appSettings);
 
-const user = {
-  id: "0",
-  name: "Jon Doe",
-  gender: "m"
-},
-userStore = User.create(user);
+const user = usersData.users[0],
+  userStore = User.create(user);
 
 let initialState = stateData;
 // const data = localStorage.getItem("wishlistapp");
